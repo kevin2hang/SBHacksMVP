@@ -1,5 +1,6 @@
 
 .total{
+    padding-top: 8vh;
     display: flex;
     justify-content: center;
 }

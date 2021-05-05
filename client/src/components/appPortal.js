@@ -50,7 +50,7 @@ class AppPortal extends Component {
                     </div>
                     <div className="form-group">
                         <label>Email:</label>
-                        <input type="text"
+                        <input type="email"
                             required
                             className="form-control"
                             value={this.state.description}
@@ -59,7 +59,7 @@ class AppPortal extends Component {
                     </div>
                     <div className="form-group">
                         <label>Prompt:</label>
-                        <input type="text"
+                        <textarea
                             required
                             className="form-control"
                             value={this.state.description}

@@ -1,0 +1,22 @@
+:root {
+    --text-color: black
+}
+
+.navBar {
+    padding: 2vh 0;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100vw;
+}
+.navBar-items {
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+a:hover {
+   filter: brightness(90%); 
+}
