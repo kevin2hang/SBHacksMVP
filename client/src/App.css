@@ -1,1 +1,14 @@
 
+.total{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 5vw;
+}
+
+.App{
+    justify-content: center;
+    text-align: center;
+}
