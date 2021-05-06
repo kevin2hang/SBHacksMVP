@@ -46,4 +46,4 @@ router.route("/").get((req, res)=> {
 })
 
 
-module.exports = Application;
+module.exports = router;
