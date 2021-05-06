@@ -1,0 +1,18 @@
+.title {
+    font-weight: 800;
+    font-size: 2vw;
+}
+
+.aboutUsContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-even;
+    width: 100%;
+}
+.aboutUsText {
+    padding: 20px;
+    width: 600px;
+}
+.aboutUsImg {
+
+}

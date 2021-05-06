@@ -16,7 +16,9 @@
 a {
     text-decoration: none;
     color: var(--text-color);
+    transition: transform 0.3s;
 }
 a:hover {
-   filter: brightness(90%); 
+   /* filter: brightness(90%);  */
+   transform: scale(1.02);
 }
