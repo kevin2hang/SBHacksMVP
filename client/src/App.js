@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function App() {
   return (
     <Router className="complete">
-    <div className="App">
+    {/* <div className="App"> */}
       <NavBar/>
 
       <div className="total">
@@ -20,7 +20,7 @@ function App() {
       </div>
       
 
-    </div>
+    {/* </div> */}
     </Router>
   );
 }

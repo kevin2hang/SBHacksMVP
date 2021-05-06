@@ -1,13 +1,23 @@
+:root {
+    --background-color: #75b9d8;
+    --text-color: #cee4ee;
+    --navbar-back: #1b049e;
+}
+
+body{
+    background-color: var(--background-color);
+}
 
 .total{
     padding-top: 8vh;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     width: 100%;
 }
 
 .title{
     font-size: 5vw;
+    font-weight: 900;
 }
 
 .App{

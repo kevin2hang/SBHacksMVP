@@ -1,17 +1,22 @@
-.title {
+.aboutUsTitle {
     font-weight: 800;
     font-size: 2vw;
+    text-align: center;
 }
 
 .aboutUsContent {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-even;
+    justify-content: space-evenly;
     width: 100%;
 }
 .aboutUsText {
+    color: var(--text-color);
+    text-align : left;
     padding: 20px;
     width: 600px;
+    font-size: 1.5vw;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .aboutUsImg {
 
