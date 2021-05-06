@@ -35,7 +35,7 @@ router.route('/apply').post((req, res) => {
     });
   
     newApp.save()
-        .then(() => res.json(newExercise._id))    // im trying to make res get set to the object id fo the newly saved recipe (not sure how)
+        .then(() => res.json(newApp._id))    // im trying to make res get set to the object id fo the newly saved recipe (not sure how)
         .catch(err => console.log(err));
   
   });
