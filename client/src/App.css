@@ -2,6 +2,7 @@
     --background-color: #75b9d8;
     --text-color: #cee4ee;
     --navbar-back: #1b049e;
+    --card-color: #8dafcc;
 }
 
 body{
@@ -22,5 +23,11 @@ body{
 
 .App{
     justify-content: center;
+    text-align: center;
+}
+
+.miniTitle {
+    font-weight: 800;
+    font-size: 2vw;
     text-align: center;
 }

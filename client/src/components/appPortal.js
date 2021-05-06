@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import "../styles/appPortal.css"
 
 class AppPortal extends Component {
     constructor(props) {
         super(props);
 
+        const schools = ['UCSB', 'UCLA', 'UCSD'];
         this.state = {
+            schools: schools,
             name: " ",
             email: " ",
-            school: " ",
-            prompt: " ",
+            school: schools[0],
+            prompt: " "
         }
     }
 
@@ -29,15 +32,21 @@ class AppPortal extends Component {
             prompt : e.target.value
         })
     }
+    onSchoolChange = (e) => {
+        this.setState({
+            school: e.target.value
+        })
+    }
 
     onSubmit = () => {
+        // add to database (haven't did that yet)
         console.log("HERE");
     }
     render() {
         return (
-            <div >
-               <h>APP AppPortal</h>
-               <div className="">
+            <div className="appPortal">
+               <h className="miniTitle">Application Portal</h>
+               <div className="appForm">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Name:</label>
@@ -57,11 +66,18 @@ class AppPortal extends Component {
                             onChange={this.onChangeEmail}
                         />
                     </div>
+                    <label>Choose your school: </label>
+
+                    <select value={this.state.school} id="schoolSelector" onChange={this.onSchoolChange} value={this.state.school}>
+                        {this.state.schools.map(school => {
+                            return <option value={school}>{school}</option>
+                        })}
+                    </select>
                     <div className="form-group">
                         <label>Prompt:</label>
                         <textarea
                             required
-                            className="form-control"
+                            className="form-control promptInput"
                             value={this.state.description}
                             onChange={this.onChangePrompt}
                         />
