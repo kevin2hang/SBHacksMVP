@@ -17,10 +17,22 @@ connection.once('open', ()=>{
     console.log("MongoDB connected sucessfully");
 })
 
+
+const applicationRouter = require('./routes/application');
+app.use('/application', applicationRouter);
+
+
 // set up express server
 app.get("/", (req,res) => {
     res.json("running here")
 });
+
+app.get("/test", (req,res) => {
+    res.json("running test")
+});
+
 app.listen(port, ()=> {
     console.log('Server is running on http: ' + port)
 });
+
+
