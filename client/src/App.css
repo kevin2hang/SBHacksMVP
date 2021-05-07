@@ -31,3 +31,16 @@ body{
     font-size: 2vw;
     text-align: left;
 }
+
+a {
+    text-decoration: none;
+}
+
+#appLink {
+    font-size: 1.5vw;
+    transition: .4s;
+}
+#appLink:hover {
+    transform: scale(1.15);
+    color: white;
+}

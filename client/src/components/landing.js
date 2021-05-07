@@ -22,7 +22,7 @@ class Landing extends Component {
             <div className="App">
                 <h className = "title">SB HACKS VIII</h>
                 <AboutUs/>
-                <Link to= {"/application"} id = "">To application</Link>
+                <Link to={"/application"} id="appLink">Apply here!</Link>
                 <FAQ/>
             </div>
             
