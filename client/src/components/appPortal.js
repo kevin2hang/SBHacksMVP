@@ -11,7 +11,8 @@ class AppPortal extends Component {
             name: " ",
             email: " ",
             school: schools[0],
-            prompt: " "
+            prompt: " ",
+            resume: null
         }
     }
 
@@ -29,13 +30,16 @@ class AppPortal extends Component {
 
     onChangePrompt = (e) => {
         this.setState({
-            prompt : e.target.value
+            prompt: e.target.value
         })
     }
     onSchoolChange = (e) => {
         this.setState({
             school: e.target.value
         })
+    }
+    onResumeChange = (e) => {
+        this.setState({ resume: e.target.files[0] });
     }
 
     onSubmit = () => {
@@ -45,44 +49,55 @@ class AppPortal extends Component {
     render() {
         return (
             <div className="appPortal">
-               <h className="miniTitle">Application Portal</h>
-               <div className="appForm">
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Name:</label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.description}
-                            onChange={this.onChangeName}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Email:</label>
-                        <input type="email"
-                            required
-                            className="form-control"
-                            value={this.state.description}
-                            onChange={this.onChangeEmail}
-                        />
-                    </div>
-                    <label>Choose your school: </label>
-
-                    <select value={this.state.school} id="schoolSelector" onChange={this.onSchoolChange} value={this.state.school}>
-                        {this.state.schools.map(school => {
-                            return <option value={school}>{school}</option>
-                        })}
-                    </select>
-                    <div className="form-group">
-                        <label>Prompt:</label>
-                        <textarea
-                            required
-                            className="form-control promptInput"
-                            value={this.state.description}
-                            onChange={this.onChangePrompt}
-                        />
-                    </div>
-                    {/* <div className="form-group">
+                <h className="miniTitle">Application Portal</h>
+                <div className="appForm">
+                    <form onSubmit={this.onSubmit}>
+                        <div className="form-group">
+                            <label>Name:</label>
+                            <input type="text"
+                                required
+                                className="form-control shortResp"
+                                value={this.state.description}
+                                onChange={this.onChangeName}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Email:</label>
+                            <input type="email"
+                                required
+                                className="form-control shortResp"
+                                value={this.state.description}
+                                onChange={this.onChangeEmail}
+                            />
+                        </div>
+                        <label>Choose your school: </label>
+                        <select value={this.state.school} id="schoolSelector" onChange={this.onSchoolChange} value={this.state.school}>
+                            {this.state.schools.map(school => {
+                                return <option value={school}>{school}</option>
+                            })}
+                        </select>
+                        <div className="form-group">
+                            <label>Prompt:</label>
+                            <textarea
+                                required
+                                className="form-control promptInput"
+                                value={this.state.description}
+                                onChange={this.onChangePrompt}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Upload Resume:</label>
+                            <input type="file"
+                                className="form-control resumeUpload"
+                                value={this.state.description}
+                                accept=".pdf"
+                                onChange={this.onResumeChange}
+                            />
+                        </div>
+                        {this.state.resume && 
+                            <div>Uploaded Resume: {this.state.resume.name}</div>
+                        }
+                        {/* <div className="form-group">
                         <label>Prompt:</label>
                         <input type="text"
                             required
@@ -92,11 +107,13 @@ class AppPortal extends Component {
                         />
                     </div> */}
 
-                    <input type="submit" value="Submit!" id="submitBtn" />
-                </form>
+                        <div id="submitBtnContainer">
+                            <input type="submit" value="Submit!" id="submitBtn" />
+                        </div>
+                    </form>
+                </div>
             </div>
-            </div>
-            
+
         )
     }
 };
