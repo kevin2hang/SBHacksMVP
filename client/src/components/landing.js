@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import AboutUs from "./aboutUs";
 import FAQ from "./faq";
+import ImageCarousel from "./imageCarousel";
 
 
 class Landing extends Component {
@@ -24,6 +25,13 @@ class Landing extends Component {
                 <AboutUs/>
                 <Link to={"/application"} id="appLink">Apply here!</Link>
                 <FAQ/>
+                <ImageCarousel/>
+                {/* Get rid of br's later */}
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
             
         )
