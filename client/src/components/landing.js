@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 import AboutUs from "./aboutUs";
+import FAQ from "./faq";
 
 
 class Landing extends Component {
@@ -22,6 +23,7 @@ class Landing extends Component {
                 <h className = "title">SB HACKS VIII</h>
                 <AboutUs/>
                 <Link to= {"/application"} id = "">To application</Link>
+                <FAQ/>
             </div>
             
         )

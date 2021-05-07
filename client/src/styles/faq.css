@@ -1,0 +1,51 @@
+.faqTitle {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.faqContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+}
+.toggleBtn {
+    display: inline;
+}
+.toggleBtn:hover {
+    cursor: pointer;
+}
+
+.faqMiniBox {
+    width: 500px;
+    margin: 2vw;
+}
+
+.question {
+    text-align: left;
+    font-size: 1.7vw;
+    border-bottom: solid;
+    padding-bottom: 0.5vw;
+}
+.question:hover {
+    filter: brightness(90%);
+}
+.response {
+    padding-top: 0.5vw;
+    text-align: left;
+    font-size: 1.5vw;
+    animation-name: fade-in;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-in{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

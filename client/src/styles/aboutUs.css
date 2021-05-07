@@ -1,14 +1,18 @@
+#aboutUsContainer {
+    width: 80%;
+    margin: auto;
+}
 .aboutUsContent {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
 }
 .aboutUsText {
     color: var(--text-color);
     text-align : left;
     padding: 20px;
-    width: 600px;
+    width: 800px;
     font-size: 1.5vw;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

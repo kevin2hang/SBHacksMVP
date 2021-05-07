@@ -54,9 +54,9 @@ textarea {
     padding: 1%;
     font-size: 1.5vw;
     transition: .3s;
+    box-shadow: 0 1px 1px 0;
 }
 #submitBtn:hover {
-    filter: brightness(90%);
     cursor: pointer;
     transform: scale(1.02);
     box-shadow: 0 2px 2px 0;
