@@ -26,12 +26,6 @@ class Landing extends Component {
                 <Link to={"/application"} id="appLink">Apply here!</Link>
                 <FAQ/>
                 <ImageCarousel/>
-                {/* Get rid of br's later */}
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
             </div>
             
         )
