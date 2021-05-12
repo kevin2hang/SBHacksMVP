@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import "../styles/appPortal.css"
 
 class AppPortal extends Component {
     constructor(props) {
         super(props);
 
-        const schools = ['UCSB', 'UCLA', 'UCSD'];
+        const schools = ['UCSB', 'UCLA', 'UCSD', 'Other'];
         this.state = {
             schools: schools,
             name: " ",
             email: " ",
             school: schools[0],
             prompt: " ",
-            resume: null
+            resume: null,
+            displayOtherOption : false
         }
     }
 
@@ -34,17 +36,45 @@ class AppPortal extends Component {
         })
     }
     onSchoolChange = (e) => {
-        this.setState({
-            school: e.target.value
-        })
+        if (e.target.value == "Other") {
+            this.setState({
+                school: "Other",
+                displayOtherOption: true
+            })
+        } else {
+            this.setState({
+                school: e.target.value,
+                displayOtherOption: false
+            })
+        }
     }
     onResumeChange = (e) => {
         this.setState({ resume: e.target.files[0] });
     }
 
-    onSubmit = () => {
+    onSubmit = (e) => {
+        e.preventDefault();
         // add to database (haven't did that yet)
         console.log("HERE");
+        const date = new Date();
+        const appId = this.state.email + date.toLocaleDateString();
+    console.log(appId);
+
+        const application = {
+            name: this.state.name,
+            email: this.state.email,
+            userId: this.state.email,
+            id: appId,
+            schoolName : this.state.school,
+            reponses : {prompt1: this.state.prompt}
+        };
+        axios.post('http://localhost:7000/application/apply', application)
+            .then(response => {
+                console.log("successfully submitted application")
+            })
+            .catch(err => {
+                console.log("Error when submitting application: "+ err);
+            })
     }
     render() {
         return (
@@ -76,6 +106,16 @@ class AppPortal extends Component {
                                 return <option value={school}>{school}</option>
                             })}
                         </select>
+                        {this.state.displayOtherOption && 
+                            <div className="form-group">
+                                <label>Enter your School:</label>
+                                <input type="text"
+                                    required
+                                    className="form-control shortResp"
+                                    value={this.state.description}
+                                    onChange={this.onChangeEmail}
+                                />
+                            </div>}
                         <div className="form-group">
                             <label>Prompt:</label>
                             <textarea
