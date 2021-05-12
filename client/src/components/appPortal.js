@@ -16,7 +16,8 @@ class AppPortal extends Component {
             school: schools[0],
             prompt: " ",
             resume: null,
-            displayOtherOption : false
+            displayOtherOption : false,
+            agree: false
         }
     }
 
@@ -54,8 +55,19 @@ class AppPortal extends Component {
         this.setState({ resume: e.target.files[0] });
     }
 
+    handleAgree = () =>{
+        this.setState({
+            agree: !this.state.agree
+        })
+        console.log(this.state.agree)
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
+
+        if(!this.state.agree){
+            alert("please agree to the terms and conditions");
+        }
         // add to database (haven't did that yet)
         console.log("HERE");
         // generate application id
@@ -135,6 +147,20 @@ class AppPortal extends Component {
                                 onChange={this.onResumeChange}
                             />
                         </div>
+
+                        {
+                            <div>
+                            <label>
+                                Agree to the terms and conditions
+                                <input
+                                type="checkbox"
+                                checked={this.state.agree}
+                                onChange={this.handleAgree} />
+                            </label>
+                            </div>
+
+
+                        }
                         {this.state.resume && 
                             <div>Uploaded Resume: {this.state.resume.name}</div>
                         }
@@ -150,6 +176,7 @@ class AppPortal extends Component {
 
                         <div id="submitBtnContainer">
                             <input type="submit" value="Submit!" id="submitBtn" />
+
                         </div>
                     </form>
                 </div>
