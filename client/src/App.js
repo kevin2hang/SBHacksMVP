@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppPortal from "./components/appPortal"
 import Landing from "./components/landing"
 import NavBar from "./components/navBar";
+import ContactInfo from "./components/contactInfo";
 
 import { Link } from 'react-router-dom';
 
@@ -16,7 +17,8 @@ function App() {
       <div className="total">
         <Route exact path="/application" exact component={() => <AppPortal/>} />
         <Route exact path="/" exact component={() => <Landing/>} />
-
+        
+        <ContactInfo/>
       </div>
       
 

@@ -45,7 +45,7 @@ const FAQ = () => {
 
     return (
         <div className="faqTotal">
-            <div className="miniTitle faqTitle">FAQ</div>
+            <h2 className="miniTitle faqTitle">FAQ</h2>
             <div className="faqContainer">
             {questions.map((question, index) => {
                 return <div className="faqMiniBox">

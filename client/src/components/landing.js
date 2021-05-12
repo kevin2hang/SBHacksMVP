@@ -21,7 +21,7 @@ class Landing extends Component {
     render() {
         return (
             <div className="App">
-                <h className = "title">SB HACKS VIII</h>
+                <h1 className = "title">SB HACKS VIII</h1>
                 <AboutUs/>
                 <Link to={"/application"} id="appLink">Apply here!</Link>
                 <FAQ/>

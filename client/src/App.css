@@ -1,12 +1,14 @@
 :root {
     --background-color: #75b9d8;
-    --text-color: #cee4ee;
+    --text-color: #dae8ee;
     --navbar-back: #1b049e;
     --card-color: #8dafcc;
+    --dark-blue: #10035c;
 }
 
 body{
     background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 .total{

@@ -1,0 +1,21 @@
+.contactInfo {
+    width: 100vw;
+    background-color: var(--dark-blue);
+    padding: 10px;
+}
+
+#contactTitle {
+    text-align: center;
+    color : var(--text-color);
+}
+
+.contactContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 65px;
+}
+
+.logo {
+    width: 5vw;
+}

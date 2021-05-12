@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import "../styles/appPortal.css"
+import "../styles/contactInfo.css";
 
 class AppPortal extends Component {
     constructor(props) {
@@ -56,9 +58,8 @@ class AppPortal extends Component {
         e.preventDefault();
         // add to database (haven't did that yet)
         console.log("HERE");
-        const date = new Date();
-        const appId = this.state.email + date.toLocaleDateString();
-    console.log(appId);
+        // generate application id
+        const appId = uuidv4();
 
         const application = {
             name: this.state.name,
@@ -79,7 +80,7 @@ class AppPortal extends Component {
     render() {
         return (
             <div className="appPortal">
-                <h className="miniTitle">Application Portal</h>
+                <h1 className="miniTitle">Application Portal</h1>
                 <div className="appForm">
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">

@@ -49,7 +49,7 @@ const ImageCarousel = () => {
 
     return(
         <div className="carousel">
-            <div className="miniTitle">Sponsors</div>
+            <h2 className="miniTitle">Sponsors</h2>
             <div className="carouselContainer">
                 <div className="left arrow" onClick={left}>{'\u21E6'}</div>
                     <div className={carouselItemClasses}>
